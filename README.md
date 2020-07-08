@@ -28,3 +28,29 @@ A: Just run these commands:
 curl https://raw.githubusercontent.com/finchss/bash.el7/master/bash-4.2.46-34.el7.x86_64.rpm -o bash-4.2.46-34.el7.x86_64.rpm
 sudo rpm --force -Uiv  bash-4.2.46-34.el7.x86_64.rpm
 </pre>
+
+If you want the logs to be in a different file:
+
+<pre>
+:msg, contains, "HISTORY" 
+USER.INFO /var/log/history
+
+:msg, contains, "HISTORY" 
+USER.INFO ~
+EOF
+service rsyslog restart
+</pre>
+
+If you want the logs to be in a different file and a remote syslog (UDP) host (replace 172.16.136.1 with your syslog server ip):
+
+<pre>
+cat > /etc/rsyslog.d/hist.conf  << EOF
+:msg, contains, "HISTORY" 
+USER.INFO /var/log/history 
+USER.INFO @172.16.136.1:514
+
+:msg, contains, "HISTORY" 
+USER.INFO ~
+EOF
+service rsyslog restart
+</pre> 
