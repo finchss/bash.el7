@@ -29,6 +29,7 @@ curl https://raw.githubusercontent.com/finchss/bash.el7/master/bash-4.2.46-34.el
 sudo rpm --force -Uiv  bash-4.2.46-34.el7.x86_64.rpm
 echo 'exclude=bash*' >> /etc/yum.conf 
 </pre>
+<strong>OPTIONAL</strong>
 
 If you want the logs to be in a different file:
 
