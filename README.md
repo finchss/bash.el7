@@ -59,3 +59,17 @@ user.info @172.16.136.1:514
 EOF
 service rsyslog restart
 </pre> 
+
+and for even more logging options:
+<pre>
+cat >> /etc/bashrc << EOF
+export HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+readonly HISTFILE
+readonly HISTSIZE
+readonly HISTFILESIZE
+readonly HISTTIMEFORMAT
+EOF
+</pre>
