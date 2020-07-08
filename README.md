@@ -32,6 +32,7 @@ sudo rpm --force -Uiv  bash-4.2.46-34.el7.x86_64.rpm
 If you want the logs to be in a different file:
 
 <pre>
+cat > /etc/rsyslog.d/hist.conf  << EOF
 :msg, contains, "HISTORY" 
 USER.INFO /var/log/history
 
