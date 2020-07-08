@@ -49,11 +49,13 @@ If you want the logs to be in a different file and a remote syslog (UDP) host (r
 <pre>
 cat > /etc/rsyslog.d/hist.conf  << EOF
 :msg, contains, "HISTORY" 
-USER.INFO /var/log/history 
-USER.INFO @172.16.136.1:514
+user.info /var/log/history 
 
 :msg, contains, "HISTORY" 
-USER.INFO ~
+user.info @172.16.136.1:514
+
+:msg, contains, "HISTORY" ~
+
 EOF
 service rsyslog restart
 </pre> 
