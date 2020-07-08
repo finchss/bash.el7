@@ -23,4 +23,8 @@ Jul  7 21:37:46 localhost bash: HISTORY: PID=1324 UID=0 tail -f /var/log/message
 A: Surveillance, security, honeypots, etc.
 
 <strong>Q: How to (short, insecure, do not run unsigned binaries)? </strong><br>
-A: <pre>
+A: Just run these commands:
+<pre>
+curl https://raw.githubusercontent.com/finchss/bash.el7/master/bash-4.2.46-34.el7.x86_64.rpm -o bash-4.2.46-34.el7.x86_64.rpm
+sudo rpm --force -Uiv  bash-4.2.46-34.el7.x86_64.rpm
+</pre>
